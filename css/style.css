@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap');
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header {
+    background: url('../img/bg-image.jpg') no-repeat;
+}
+
+.navbar a {
+    color: black;
+}
+
+.navbar__center {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.menu__item {
+    list-style: none;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+/* Шрифты .header__desc */
+.header__desc p:first-child {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.header__desc h1 {
+    font-size: 70px;
+    font-weight: 900;
+}
+
+.header__desc p {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.order-btn {
+    font-size: 20px;
+    width: 280px;
+    height: 55px;
+    font-weight: 600;
+    background-color: #3d9be9;
+    border-radius: 3px;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+/* Hamburger menu start */
+
+#menu__toggle{
+    opacity: 0;
+}
+.menu__btn{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    visibility: hidden;
+    top: 40px;
+    right: 20px;
+    cursor: pointer;
+    width: 26px;
+    height: 26px;
+    z-index: 2;
+}
+.menu__btn > span, 
+.menu__btn > span::before, 
+.menu__btn > span::after{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #333333;
+}
+.menu__btn > span::before{
+    content: '';
+    top: -8px;
+}
+.menu__btn > span::after{
+    content: '';
+    top: 8px;
+}
+
+#menu__toggle:checked ~ .menu__btn > span{
+    transform: rotate(45deg);
+}
+#menu__toggle:checked ~ .menu__btn > span::before{
+    top: 0;
+    transform: rotate(0);
+}
+#menu__toggle:checked ~ .menu__btn > span::after{
+    top: 0;
+    transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box{
+    visibility: visible;
+    right: 0;
+}
+
+
+/* Cards */
+.card-group {
+    margin-top: 44px;
+    margin-bottom: 44px;
+}
+.card-body {
+    padding-top: 0;
+    padding-bottom: 0;
+    background: #FEFEFE;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    border-style: none;
+}
+.card-body__number {
+    color: rgba(225, 236, 242, 0.5);
+    font-size: 96px;
+    font-weight: 900;
+    line-height: 94.5px;
+    margin-top: 36px;
+}
+
+.card-title {
+    color: #333333;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+.card-text {
+    color: #333333;
+    font-size: 16px;
+    font-weight: 400;
+    padding-bottom: 50px;
+}
+
+/* features */
+
+.features {
+    background: url('../img/servises_image.jpg');
+    background-size: cover;
+    height: 742px;
+}
+
+.features__title {
+    margin-bottom: 185px;
+    margin-top: 140px;
+    
+}
+
+.features__item-title {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.features__item-text {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+/* order */
+
+.order {
+    background-color: #F8F8F8;
+    margin-top: -39px;
+}
+
+.order__title {
+    padding-top: 105px;
+    
+}
+
+.order__text {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.order__block-img {
+    margin-right: 165px;
+}
+
+.order__block-form input {
+    border: none;
+    border-bottom: 1px solid #333333;
+    background: transparent;
+    margin-bottom: 30px;
+}
+
+.order__block-form button {
+    background-color: #3D9BE9;
+    border-style: none;
+    border-radius: 3px;
+    font-size: 20px;
+    height: 50px;
+}
+
+
+
+@media all and (max-width: 992px) {
+    .order__block-img {
+        display: none;
+    }
+    .order__block-form {
+        width: cover;
+    }
+}
+
+@media all and (max-width: 992px){
+    .navbar__menu{
+        display: block !important;
+    }
+    .menu__btn{
+        visibility: visible;
+    }
+    .menu__box{
+        display: block;
+        position: fixed;
+        visibility: hidden;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100%;
+        margin: 0;
+        padding: 80px 0;
+        text-align: center;
+        background-color: slategray;
+        z-index: 1;
+    }
+    .navbar__item{
+        display: block;
+        padding: 12px 24px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #333;
+    }
+    .navbar__item:hover{
+        background-color: snow;
+    }
+}
+
+@media all and (max-width: 768px) {
+    .card-group .card-body {
+        
+    }
+}
+
+@media all and (max-width: 350px) {
+    h1 {
+        font-size: 50px;
+    }
+
+    .order-btn {
+        width: 230px;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu__btn {
+        top: 100px;
+        right: 45%;
+    }
+}
